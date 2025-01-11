@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewManager = ViewManager()
+    @State var recipes: [Recipe]?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if let recipes {
+                ScrollView {
+                    ForEach(recipes, id: \.id) { recipe in
+                        HStack {
+                            Text("\(recipe.name)")
+                            Text(("\(recipe.cuisine.rawValue)"))
+                        }
+                    }
+                }
+                .padding()
+            }
         }
-        .padding()
+        .task {
+            self.recipes = try? await viewManager.networkManager.fetchRecipes()
+            
+        }
     }
-}
-
-#Preview {
-    ContentView()
 }
