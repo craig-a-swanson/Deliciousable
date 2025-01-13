@@ -9,25 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewManager = ViewManager()
-    @State var recipes: [Recipe]?
+    @StateObject var viewModel = RecipeViewModel(networkManager: NetworkManager())
     
     var body: some View {
         ZStack {
-            if let recipes {
-                ScrollView {
-                    ForEach(recipes, id: \.id) { recipe in
-                        HStack {
-                            Text("\(recipe.name)")
-                            Text(("\(recipe.cuisine.rawValue)"))
-                        }
+            ScrollView {
+                ForEach(viewModel.recipes, id: \.id) { recipe in
+                    HStack {
+                        Text("\(recipe.name)")
+                        Text(("\(recipe.cuisine.rawValue)"))
                     }
                 }
-                .padding()
             }
+            .padding()
         }
         .task {
-            self.recipes = try? await viewManager.networkManager.fetchRecipes()
+            do {
+                try await viewModel.fetchRecipes()
+            } catch {
+                // display error in UI
+            }
             
         }
     }

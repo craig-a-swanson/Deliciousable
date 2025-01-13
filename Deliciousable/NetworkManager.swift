@@ -11,15 +11,13 @@ enum NetworkErrors: Error {
     case baseURL
 }
 
-final class NetworkManager {
+final class NetworkManager: NetworkSession {
     
-    let url: URL?
-    init (url: URL?) {
-        self.url = url
-    }
+    let validURL: URL? = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
+
     
     func fetchRecipes() async throws -> [Recipe] {
-        guard let url else {
+        guard let url = validURL else {
             throw NetworkErrors.baseURL
         }
         
@@ -29,7 +27,6 @@ final class NetworkManager {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let response = try decoder.decode(Response.self, from: data)
-            print(response)
             return response.recipes
         } catch {
             print("ERROR: \(error)")
