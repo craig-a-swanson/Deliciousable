@@ -27,4 +27,6 @@ struct Recipe: Codable, Identifiable {
         case thumbnailUrl = "photoUrlSmall"
         case id = "uuid"
     }
+    
+    var cacheKey: String { id } // For clarity, create a 'cacheKey' property that is simply the object's id.
 }
