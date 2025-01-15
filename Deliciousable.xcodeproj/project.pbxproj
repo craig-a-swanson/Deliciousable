@@ -19,6 +19,7 @@
 		44F30A972D374C0B00234A1A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A882D374C0B00234A1A /* WebView.swift */; };
 		44F30A982D374C0B00234A1A /* DeliciousableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A8B2D374C0B00234A1A /* DeliciousableApp.swift */; };
 		44F30A992D374C0B00234A1A /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A8C2D374C0B00234A1A /* RecipeViewModel.swift */; };
+		44F30A9C2D37759500234A1A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A9B2D37758F00234A1A /* FilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		44F30A8A2D374C0B00234A1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44F30A8B2D374C0B00234A1A /* DeliciousableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliciousableApp.swift; sourceTree = "<group>"; };
 		44F30A8C2D374C0B00234A1A /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		44F30A9B2D37758F00234A1A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -112,8 +114,8 @@
 		44F30A7F2D374C0B00234A1A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				44F30A7D2D374C0B00234A1A /* Cuisine.swift */,
 				44F30A7E2D374C0B00234A1A /* Recipe.swift */,
+				44F30A7D2D374C0B00234A1A /* Cuisine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +143,7 @@
 			children = (
 				44F30A862D374C0B00234A1A /* CachedImageView.swift */,
 				44F30A872D374C0B00234A1A /* ContentView.swift */,
+				44F30A9B2D37758F00234A1A /* FilterView.swift */,
 				44F30A882D374C0B00234A1A /* WebView.swift */,
 			);
 			path = Views;
@@ -149,6 +152,7 @@
 		44F30A8D2D374C0B00234A1A /* Deliciousable */ = {
 			isa = PBXGroup;
 			children = (
+				44F30A852D374C0B00234A1A /* Preview Content */,
 				44F30A7F2D374C0B00234A1A /* Models */,
 				44F30A8C2D374C0B00234A1A /* RecipeViewModel.swift */,
 				44F30A832D374C0B00234A1A /* Networking */,
@@ -160,7 +164,6 @@
 		44F30A9A2D374C4700234A1A /* Project Files */ = {
 			isa = PBXGroup;
 			children = (
-				44F30A852D374C0B00234A1A /* Preview Content */,
 				44F30A8A2D374C0B00234A1A /* Assets.xcassets */,
 				44F30A8B2D374C0B00234A1A /* DeliciousableApp.swift */,
 			);
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F30A9C2D37759500234A1A /* FilterView.swift in Sources */,
 				44F30A902D374C0B00234A1A /* Cuisine.swift in Sources */,
 				44F30A912D374C0B00234A1A /* Recipe.swift in Sources */,
 				44F30A922D374C0B00234A1A /* CachedImageManager.swift in Sources */,

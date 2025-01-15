@@ -22,7 +22,11 @@ struct CachedImageView: View {
                 if let validURL = recipe.thumbnailUrl {
                     ProgressView()
                         .task {
-                            await imageLoader.loadImage(fromURL: validURL, usingKey: recipe.cacheKey)
+                            do {
+                                await try imageLoader.loadImage(fromURL: validURL, usingKey: recipe.cacheKey)
+                            } catch {
+                                // TODO: Handle error
+                            }
                         }
                 }
             }
