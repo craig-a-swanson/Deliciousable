@@ -19,7 +19,7 @@ class CachedImageManager: ObservableObject {
         }
         
         do {
-            let (data, response) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await URLSession.shared.data(from: url)
             if let fetchedImage = UIImage(data: data) {
                 ImageCache.shared.setImage(fetchedImage, forKey: cacheKey)
                 self.image = fetchedImage

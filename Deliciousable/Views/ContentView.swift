@@ -9,24 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel = RecipeViewModel(networkManager: NetworkManager())
+    @StateObject var viewModel: RecipeViewModel
     @State private var showWebView = false
     @State private var selectedRecipe: Recipe?
     @State private var selectedVideo: Recipe?
     @State private var isSmallListView = true
     @State private var isPortraitMode = UIDevice.current.orientation == .portrait
+    @State private var selectedCuisines: Set<Cuisine> = []
+    @State private var showCuisineFilterView = false
+    @State private var filteredRecipes: [Recipe] = []
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: RecipeViewModel(networkManager: NetworkManager()))
+    }
     
     var body: some View {
         NavigationStack {
             Group {
                 if isSmallListView {
-                    SmallRecipeListView(isPortraitMode: $isPortraitMode, selectedRecipe: $selectedRecipe)
+                    SmallRecipeListView(filteredRecipes: $filteredRecipes, isPortraitMode: $isPortraitMode, selectedRecipe: $selectedRecipe)
                 } else {
-                    LargeRecipeListView(isPortraitMode: $isPortraitMode, selectedRecipe: $selectedRecipe, selectedVideo: $selectedVideo)
+                    LargeRecipeListView(filteredRecipes: $filteredRecipes, isPortraitMode: $isPortraitMode, selectedRecipe: $selectedRecipe, selectedVideo: $selectedVideo)
                 }
             }
                 .navigationTitle("Today's Recipes")
                 .toolbar {
+                    // Insert toolbar button for the list view type.
                     ToolbarItem(placement: .bottomBar) {
                         Button {
                             withAnimation {
@@ -36,9 +44,11 @@ struct ContentView: View {
                             Image(systemName: isSmallListView ? "list.dash" : "rectangle.grid.1x2")
                         }
                     }
+                    
+                    // Insert toolbar button to filter on cuisine.
                     ToolbarItem(placement: .bottomBar) {
                         Button {
-                            
+                            showCuisineFilterView = true
                         } label: {
                             Image(systemName: "globe")
                         }
@@ -51,17 +61,27 @@ struct ContentView: View {
                         // TODO: display error
                     }
                 }
+                .onChange(of: selectedCuisines) { _ in
+                    if selectedCuisines.isEmpty {
+                        filteredRecipes = viewModel.recipes
+                    }
+                    filteredRecipes = viewModel.recipes.filter { selectedCuisines.contains($0.cuisine) }
+                }
         }
+        // Receive a notification when the devices changes between portrait and landscape.
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification), perform: { _ in
             self.isPortraitMode = UIDevice.current.orientation == .portrait
         })
+        // Complete a call to fetch the recipes when the view is loaded.
         .task {
             do {
                 try await viewModel.fetchRecipes()
+                self.filteredRecipes = viewModel.recipes
             } catch {
                 // TODO: display error in UI
             }
         }
+        // Present a sheet with a webview if the user selects either the recipe source link or the youtube link. We use a sheet with webview to keep the app in the foreground, otherwise it would open the link in Safari.
         .sheet(item: $selectedRecipe, onDismiss: {
             self.selectedRecipe = nil
         }, content: { recipe in
@@ -81,13 +101,16 @@ struct ContentView: View {
                 WebView(recipeURL: youtubeURL)
             }
         })
+        .sheet(isPresented: $showCuisineFilterView) {
+            FilterView(selectedCuisines: $selectedCuisines)
+        }
         .environmentObject(viewModel)
     }
 }
 
 struct SmallRecipeListView: View {
     
-    @EnvironmentObject var viewModel: RecipeViewModel
+    @Binding var filteredRecipes: [Recipe]
     @Binding var isPortraitMode: Bool
     @Binding var selectedRecipe: Recipe?
     
@@ -98,7 +121,7 @@ struct SmallRecipeListView: View {
     
     var body: some View {
         if isPortraitMode {
-            List(viewModel.recipes, id: \.id) { recipe in
+            List(filteredRecipes, id: \.id) { recipe in
                 HStack {
                     CachedImageView(recipe: recipe)
                         .frame(width: 60, height: 60)
@@ -121,7 +144,7 @@ struct SmallRecipeListView: View {
         } else {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 12) {
-                    ForEach(viewModel.recipes, id:\.id) { recipe in
+                    ForEach(filteredRecipes, id:\.id) { recipe in
                         HStack {
                             CachedImageView(recipe: recipe)
                                 .frame(width: 60, height: 60)
@@ -158,6 +181,7 @@ struct SmallRecipeListView: View {
 struct LargeRecipeListView: View {
     
     @EnvironmentObject var viewModel: RecipeViewModel
+    @Binding var filteredRecipes: [Recipe]
     @Binding var isPortraitMode: Bool
     @Binding var selectedRecipe: Recipe?
     @Binding var selectedVideo: Recipe?
@@ -169,7 +193,7 @@ struct LargeRecipeListView: View {
     
     var body: some View {
         if isPortraitMode {
-            List(viewModel.recipes, id: \.id) { recipe in
+            List(filteredRecipes, id: \.id) { recipe in
                 HStack {
                     CachedImageView(recipe: recipe)
                         .frame(width: 120, height: 120)
@@ -201,7 +225,7 @@ struct LargeRecipeListView: View {
         } else {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 12) {
-                    ForEach(viewModel.recipes, id:\.id) { recipe in
+                    ForEach(filteredRecipes, id:\.id) { recipe in
                         HStack {
                             CachedImageView(recipe: recipe)
                                 .frame(width: 120, height: 120)
