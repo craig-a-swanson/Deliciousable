@@ -6,6 +6,7 @@
 //
 
 
+/// Enumeration describing each Cuisine type found in the recipe payload.
 enum Cuisine: String, Codable, CaseIterable {
     case malaysian = "Malaysian",
          british = "British",

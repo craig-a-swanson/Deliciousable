@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Observable Object class that, in conjunction with ImageCache, will either return the cached image or fetch the image from the server and save it to cache.
 @MainActor
 class CachedImageManager: ObservableObject {
     @Published var image: UIImage?

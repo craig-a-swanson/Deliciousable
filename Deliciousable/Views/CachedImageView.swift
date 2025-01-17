@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Provides a view with the cached image, if available, or initiates a load of the image if it is not yet in cache.
 struct CachedImageView: View {
     
     let recipe: Recipe
@@ -15,15 +17,20 @@ struct CachedImageView: View {
     
     var body: some View {
         Group {
+            // Set the view to the cached image if it's available.
             if let image = imageLoader.image {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
+                
             } else if showNoImageFound {
-                Image(uiImage: UIImage(named: "appIcon") ?? UIImage())
+                // If an image is not fetched, use the app icon as a placeholder.
+                Image(uiImage: UIImage(named: "DeliciousableIcon") ?? UIImage())
                     .resizable()
                     .scaledToFit()
+                
             } else {
+                // Load the image if it is not yet cached.
                 if let validURL = recipe.thumbnailUrl {
                     ProgressView()
                         .task {

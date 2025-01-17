@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Class using a singleton that provides an NSCache object to get and set a UIImage into a cache.
 class ImageCache {
     static let shared = ImageCache()
 

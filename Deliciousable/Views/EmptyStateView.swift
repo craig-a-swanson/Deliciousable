@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View shown with the recipe array is empty.
 struct EmptyStateView: View {
     
     @EnvironmentObject var viewModel: RecipeViewModel

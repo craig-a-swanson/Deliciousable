@@ -84,6 +84,7 @@ struct ContentView: View {
                         .navigationTitle("Deliciousable: \(recipe.name)")
                         .navigationBarTitleDisplayMode(.inline)
                 }
+                .presentationDragIndicator(.visible)
             }
         })
         .sheet(item: $selectedVideo, onDismiss: {
@@ -91,6 +92,7 @@ struct ContentView: View {
         }, content: { recipe in
             if let youtubeURL = recipe.youtubeUrl {
                 WebView(recipeURL: youtubeURL)
+                    .presentationDragIndicator(.visible)
             }
         })
         .sheet(isPresented: $showCuisineFilterView) {

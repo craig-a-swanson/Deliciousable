@@ -7,12 +7,12 @@
 
 import Foundation
 
+/// The response from the backend.
 struct Response: Codable {
     let recipes: [Recipe]
 }
 
 struct Recipe: Codable, Identifiable {
-    
     let cuisine: Cuisine
     let name: String
     let imageUrl: URL?

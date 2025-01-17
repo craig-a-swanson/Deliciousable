@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+/// A list of available cuisine types that the user can select to filter the recipe list.
 struct FilterView: View {
     @Environment(\.dismiss) private var dismiss
     

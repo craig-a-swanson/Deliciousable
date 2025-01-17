@@ -8,10 +8,13 @@
 import Foundation
 
 
+/// Network client that performs primary communication with the remote server.
 final class NetworkManager: NetworkSession {
     
     let validURL: URL? = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
     
+    /// Performs a GET URLSession call to fetch recipe data from the server.
+    /// - Returns: An array of Recipe.
     func fetchRecipes() async throws -> [Recipe] {
         guard let url = validURL else {
             throw NetworkErrors.invalidURL

@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+/// View showing an expanded list of the recipes. A device in landscape view will show two columns.
 struct LargeRecipeListView: View {
     
     @EnvironmentObject var viewModel: RecipeViewModel

@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+/// View showing a condensed list of the recipes. A device in landscape view will show two columns.
 struct SmallRecipeListView: View {
     
     @Binding var filteredRecipes: [Recipe]

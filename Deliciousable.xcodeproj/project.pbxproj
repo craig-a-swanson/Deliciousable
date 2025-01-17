@@ -11,6 +11,7 @@
 		44D826F92D39C734000BCFA3 /* SmallRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */; };
 		44D826FB2D39C753000BCFA3 /* LargeRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */; };
 		44D826FD2D39C77F000BCFA3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */; };
+		44D826FF2D39F15C000BCFA3 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826FE2D39F15C000BCFA3 /* NetworkSessionProtocol.swift */; };
 		44F30A8E2D374C0B00234A1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F30A842D374C0B00234A1A /* Preview Assets.xcassets */; };
 		44F30A8F2D374C0B00234A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F30A8A2D374C0B00234A1A /* Assets.xcassets */; };
 		44F30A902D374C0B00234A1A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A7D2D374C0B00234A1A /* Cuisine.swift */; };
@@ -48,6 +49,7 @@
 		44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRecipeListView.swift; sourceTree = "<group>"; };
 		44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRecipeListView.swift; sourceTree = "<group>"; };
 		44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		44D826FE2D39F15C000BCFA3 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		44F30A282D31E1C000234A1A /* Deliciousable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deliciousable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A382D31E1C600234A1A /* DeliciousableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A422D31E1C600234A1A /* DeliciousableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,9 +132,10 @@
 		44F30A832D374C0B00234A1A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				44F30A802D374C0B00234A1A /* CachedImageManager.swift */,
 				44F30A812D374C0B00234A1A /* ImageCache.swift */,
+				44F30A802D374C0B00234A1A /* CachedImageManager.swift */,
 				44F30A822D374C0B00234A1A /* NetworkManager.swift */,
+				44D826FE2D39F15C000BCFA3 /* NetworkSessionProtocol.swift */,
 				44D826F62D39BFD4000BCFA3 /* NetworkErrors.swift */,
 			);
 			path = Networking;
@@ -335,6 +338,7 @@
 				44D826F92D39C734000BCFA3 /* SmallRecipeListView.swift in Sources */,
 				44F30A972D374C0B00234A1A /* WebView.swift in Sources */,
 				44D826FD2D39C77F000BCFA3 /* EmptyStateView.swift in Sources */,
+				44D826FF2D39F15C000BCFA3 /* NetworkSessionProtocol.swift in Sources */,
 				44F30A982D374C0B00234A1A /* DeliciousableApp.swift in Sources */,
 				44F30A992D374C0B00234A1A /* RecipeViewModel.swift in Sources */,
 			);
