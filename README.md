@@ -1,3 +1,5 @@
+Hello, thank you for taking the time to review my project. I tried to comment as best could, but please let me know if you have any questions or would like a better understanding of decisions.
+
 ### Summary: Include screen shots or a video of your app highlighting its features
 The main landing screen is the list of recipes in condensed format. There is a small photo, name, cuisine. If a source link exists, the recipe name is tappable.
 ![Main Screen](https://github.com/user-attachments/assets/f78bcc69-1a7a-45a5-ae7c-b842a5ed5499)
