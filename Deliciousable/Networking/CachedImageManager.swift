@@ -25,7 +25,7 @@ class CachedImageManager: ObservableObject {
                 self.image = fetchedImage
             }
         } catch {
-            // TODO: Handle error
+            throw NetworkErrors.fetchDataError
         }
     }
 }

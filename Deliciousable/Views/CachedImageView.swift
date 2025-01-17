@@ -11,11 +11,16 @@ struct CachedImageView: View {
     
     let recipe: Recipe
     @StateObject private var imageLoader = CachedImageManager()
+    @State private var showNoImageFound = false
     
     var body: some View {
         Group {
             if let image = imageLoader.image {
                 Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            } else if showNoImageFound {
+                Image(uiImage: UIImage(named: "appIcon") ?? UIImage())
                     .resizable()
                     .scaledToFit()
             } else {
@@ -25,7 +30,8 @@ struct CachedImageView: View {
                             do {
                                 try await imageLoader.loadImage(fromURL: validURL, usingKey: recipe.cacheKey)
                             } catch {
-                                // TODO: Handle error
+                                print(error)
+                                showNoImageFound = true
                             }
                         }
                 }

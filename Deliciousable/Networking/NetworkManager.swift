@@ -7,21 +7,25 @@
 
 import Foundation
 
-enum NetworkErrors: Error {
-    case baseURL
-}
 
 final class NetworkManager: NetworkSession {
     
     let validURL: URL? = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json")
-
     
     func fetchRecipes() async throws -> [Recipe] {
         guard let url = validURL else {
-            throw NetworkErrors.baseURL
+            throw NetworkErrors.invalidURL
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkErrors.invalidResponse
+        }
+        
+        if !(200...299).contains(httpResponse.statusCode) {
+            throw NetworkErrors.invalidResponse
+        }
         
         do {
             let decoder = JSONDecoder()
@@ -30,7 +34,7 @@ final class NetworkManager: NetworkSession {
             return response.recipes
         } catch {
             print("ERROR: \(error)")
-            throw NetworkErrors.baseURL
+            throw NetworkErrors.decodingError
         }
     }
 }

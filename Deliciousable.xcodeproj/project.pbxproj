@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44D826F72D39BFD4000BCFA3 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826F62D39BFD4000BCFA3 /* NetworkErrors.swift */; };
+		44D826F92D39C734000BCFA3 /* SmallRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */; };
+		44D826FB2D39C753000BCFA3 /* LargeRecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */; };
+		44D826FD2D39C77F000BCFA3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */; };
 		44F30A8E2D374C0B00234A1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F30A842D374C0B00234A1A /* Preview Assets.xcassets */; };
 		44F30A8F2D374C0B00234A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F30A8A2D374C0B00234A1A /* Assets.xcassets */; };
 		44F30A902D374C0B00234A1A /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F30A7D2D374C0B00234A1A /* Cuisine.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44D826F62D39BFD4000BCFA3 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRecipeListView.swift; sourceTree = "<group>"; };
+		44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRecipeListView.swift; sourceTree = "<group>"; };
+		44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		44F30A282D31E1C000234A1A /* Deliciousable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deliciousable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A382D31E1C600234A1A /* DeliciousableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A422D31E1C600234A1A /* DeliciousableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +133,7 @@
 				44F30A802D374C0B00234A1A /* CachedImageManager.swift */,
 				44F30A812D374C0B00234A1A /* ImageCache.swift */,
 				44F30A822D374C0B00234A1A /* NetworkManager.swift */,
+				44D826F62D39BFD4000BCFA3 /* NetworkErrors.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -142,6 +151,9 @@
 			children = (
 				44F30A862D374C0B00234A1A /* CachedImageView.swift */,
 				44F30A872D374C0B00234A1A /* ContentView.swift */,
+				44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */,
+				44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */,
+				44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */,
 				44F30A9B2D37758F00234A1A /* FilterView.swift */,
 				44F30A882D374C0B00234A1A /* WebView.swift */,
 			);
@@ -312,13 +324,17 @@
 			files = (
 				44F30A9C2D37759500234A1A /* FilterView.swift in Sources */,
 				44F30A902D374C0B00234A1A /* Cuisine.swift in Sources */,
+				44D826FB2D39C753000BCFA3 /* LargeRecipeListView.swift in Sources */,
 				44F30A912D374C0B00234A1A /* Recipe.swift in Sources */,
 				44F30A922D374C0B00234A1A /* CachedImageManager.swift in Sources */,
 				44F30A932D374C0B00234A1A /* ImageCache.swift in Sources */,
+				44D826F72D39BFD4000BCFA3 /* NetworkErrors.swift in Sources */,
 				44F30A942D374C0B00234A1A /* NetworkManager.swift in Sources */,
 				44F30A952D374C0B00234A1A /* CachedImageView.swift in Sources */,
 				44F30A962D374C0B00234A1A /* ContentView.swift in Sources */,
+				44D826F92D39C734000BCFA3 /* SmallRecipeListView.swift in Sources */,
 				44F30A972D374C0B00234A1A /* WebView.swift in Sources */,
+				44D826FD2D39C77F000BCFA3 /* EmptyStateView.swift in Sources */,
 				44F30A982D374C0B00234A1A /* DeliciousableApp.swift in Sources */,
 				44F30A992D374C0B00234A1A /* RecipeViewModel.swift in Sources */,
 			);
