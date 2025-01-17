@@ -5,7 +5,7 @@
 //  Created by Craig Swanson on 1/11/25.
 //
 
-import Foundation
+import UIKit
 
 
 /// Network client that performs primary communication with the remote server.

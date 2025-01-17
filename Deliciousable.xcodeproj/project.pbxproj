@@ -50,6 +50,7 @@
 		44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRecipeListView.swift; sourceTree = "<group>"; };
 		44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		44D826FE2D39F15C000BCFA3 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
+		44D827002D3ACCB5000BCFA3 /* Deliciousable.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Deliciousable.xctestplan; sourceTree = "<group>"; };
 		44F30A282D31E1C000234A1A /* Deliciousable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deliciousable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A382D31E1C600234A1A /* DeliciousableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F30A422D31E1C600234A1A /* DeliciousableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +105,7 @@
 		44F30A1F2D31E1C000234A1A = {
 			isa = PBXGroup;
 			children = (
+				44D827002D3ACCB5000BCFA3 /* Deliciousable.xctestplan */,
 				44F30A8D2D374C0B00234A1A /* Deliciousable */,
 				44F30A3B2D31E1C600234A1A /* DeliciousableTests */,
 				44F30A292D31E1C000234A1A /* Products */,
@@ -152,8 +154,8 @@
 		44F30A892D374C0B00234A1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				44F30A862D374C0B00234A1A /* CachedImageView.swift */,
 				44F30A872D374C0B00234A1A /* ContentView.swift */,
+				44F30A862D374C0B00234A1A /* CachedImageView.swift */,
 				44D826F82D39C734000BCFA3 /* SmallRecipeListView.swift */,
 				44D826FA2D39C753000BCFA3 /* LargeRecipeListView.swift */,
 				44D826FC2D39C77F000BCFA3 /* EmptyStateView.swift */,

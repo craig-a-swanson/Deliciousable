@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "2D0D24F7-F6CD-48CA-92E9-2D5F34266A2E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Deliciousable.xcodeproj",
+      "identifier" : "44F30A272D31E1C000234A1A",
+      "name" : "Deliciousable"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Deliciousable.xcodeproj",
+        "identifier" : "44F30A372D31E1C600234A1A",
+        "name" : "DeliciousableTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Deliciousable.xcodeproj",
+        "identifier" : "44F30A412D31E1C600234A1A",
+        "name" : "DeliciousableUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

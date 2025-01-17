@@ -5,7 +5,7 @@
 //  Created by Craig Swanson on 1/13/25.
 //
 
-import Foundation
+import UIKit
 @testable import Deliciousable
 
 class MockNetworkManager: NetworkSession {
@@ -30,7 +30,7 @@ class MockNetworkManager: NetworkSession {
         }
         
         guard let resultData else {
-            throw NetworkErrors.baseURL
+            throw NetworkErrors.invalidResponse
         }
         
         do {
@@ -40,7 +40,7 @@ class MockNetworkManager: NetworkSession {
             return response.recipes
         } catch {
             print("ERROR: \(error)")
-            throw NetworkErrors.baseURL
+            throw NetworkErrors.decodingError
         }
     }
 }
