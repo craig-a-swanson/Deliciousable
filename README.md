@@ -30,7 +30,7 @@ Filtered results.
 In setting my priorities I wanted to focus on:
   1. An intuitive and responsive user interface (to show my focus on ultimately creating an app that is pleasant and easy to use);
   2. Items that were specifically mentioned in the requirements (to show that I can incorporate guidelines and requests and accommodate client needs when building an app);
-  3. Providing comments, as necessary, to make reviewing the code easier (to show that I do not overlook details and try to maintain solid coding practices; as well as showing that I am a collaborater and understand that I am part of a team working on a project together).
+  3. Providing a well-organzied code and file stucture, as well as documenting and commenting the code to facilitate the review (to show that I do not overlook details and try to maintain solid coding practices; as well as showing that I am a collaborater and understand that I am part of a team working on a project together).
 
 ### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
 ### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
