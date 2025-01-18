@@ -1,20 +1,25 @@
 Hello, thank you for taking the time to review my project. I tried to comment as best could, but please let me know if you have any questions or would like a better understanding of decisions.
 
 ### Summary: Include screen shots or a video of your app highlighting its features
-The main landing screen is the list of recipes in condensed format. There is a small photo, name, cuisine. If a source link exists, the recipe name is tappable.
-![Main Screen](https://github.com/user-attachments/assets/f78bcc69-1a7a-45a5-ae7c-b842a5ed5499)
+The main landing screen is the list of recipes in condensed format. There is a small photo, name, cuisine. If a source link exists, the recipe name is tappable. The toolbar contains three buttons: on the left is an option to change the view format, the globe allows the user to filter the list, and the right "info" button contains necessary icon attribution.
 
-Same view but expanded for a larger image and a link to a youtube video as well.
-![Expanded List View](https://github.com/user-attachments/assets/f2611528-6650-45c4-8cc7-1d750f7d2eb6)
+![Main Screen](https://github.com/user-attachments/assets/df072ab8-d574-494d-86b1-14f82a48e8d2)
+
+When tapping on the lower left toolbar button the view will toggle between the condensed format and the expanded format. The expanded view contains a larger image and a link to a YouTube video as well.
+
+![Expanded List View](https://github.com/user-attachments/assets/c339d04d-47ec-45d4-b9c4-d50450884908)
 
 If the device is in landscape, there will be two columns to make use of the extra space.
-![Landscape View](https://github.com/user-attachments/assets/6a890024-47de-4110-935c-6c2378436686)
 
-A sheet will appear when tapping on the globe button. Filter the recipe list by desired cuisine types.
-![Filter Sheet](https://github.com/user-attachments/assets/3a625e30-20da-4263-a168-e3ab8585d43f)
+![Landscape View](https://github.com/user-attachments/assets/58912cca-9390-40d2-9110-a0671dcc85c3)
+
+A sheet will appear when tapping on the globe toolbar button. Filter the recipe list by desired cuisine types.
+
+![Filter Sheet](https://github.com/user-attachments/assets/c2cd4f69-07ab-42db-be9a-491b906883d8)
 
 Filtered results.
-![Filtered Results](https://github.com/user-attachments/assets/3aa81b6d-00a5-4a3f-99d4-7a38e49f0f1d)
+
+![Filtered Results](https://github.com/user-attachments/assets/efcbbca3-f62f-4b58-9c6d-839554cc8144)
 
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
@@ -25,8 +30,8 @@ In setting my priorities I wanted to focus on:
 
 ### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
 ### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
-I am answering the above questions with one description. Over the course of a week I spent roughly 15-20 hours on the project, which included reviewing some elements I have not used in awhile, such as NSCache. Since there was no deadline given, I attempted to strike a balance with delivering a rich and full app while also understanding that the time is not limitless. 
-I wanted to be complete but delivering the project in a timely manner. To this end, my biggest trade-off was likely a more polished UI design with complimentary colors and interesting layouts of elements.
+I am answering the above two questions with one description. Over the course of a week I spent roughly 15-20 hours on the project, which included reviewing some elements I have not used in awhile, such as NSCache. Since there was no deadline given, I attempted to strike a balance with delivering a rich and full app while also understanding that the time is not limitless. 
+I wanted to be complete but deliver the project in a timely manner. To this end, my biggest trade-off was likely a more polished UI design with complimentary colors and interesting layouts of elements.
 
 ### Weakest Part of the Project: What do you think is the weakest part of your project?
 The testing covers 53% according the Xcode coverage report. I thought this was adequate, but understand that more testing can be done. I wanted to use Swift Testing to show my familiarity and willingness to incorporate new frameworks.
